@@ -1,0 +1,239 @@
+:root {
+    /* --------PRIMARY COLORS -----  */
+    --clr-green-200: hsl(148, 38%, 91%);
+    --clr-green-600: hsl(169, 82%, 27%);
+    --clr-green-900: hsl(170, 52%, 13%);
+    --clr-red-500: hsl(0, 66%, 54%);
+    /* -------- NEUTRAL COLORS ----------  */
+    --clr-white-500: hsl(0, 0%, 100%);
+    --clr-grey-500: hsl(186, 15%, 59%);
+    --clr-grey-900: hsl(187, 24%, 22%);
+}
+
+body {
+    font-size: 1rem;
+    font-family: "Karla", sans-serif;
+
+    /* ---- FONT WEIGHT = 400, 700 -----  */
+    font-weight: 400;
+    background-color: var(--clr-green-200);
+    color: var(--clr-grey-900);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* ---------- TYPOGRAPHY -----------------  */
+
+.container__asterisk {
+    color: var(--clr-green-600);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+}
+
+.card__title {
+    font-size: 1.6rem;
+    color: var(--clr-grey-900);
+    margin-bottom: 1em;
+    letter-spacing: -0.05em;
+    font-weight: 700;
+}
+
+.form label {
+    color: var(--clr-grey-900);
+}
+
+label,
+.container__error {
+    font-size: 0.85rem;
+}
+
+.container__query label {
+    font-size: 0.9rem;
+    color: var(--clr-grey-900);
+}
+
+.form input {
+    padding: 0.6em;
+    color: var(--clr-grey-900);
+}
+
+.form textarea {
+    padding: 0.6em;
+    color: var(--clr-grey-900);
+}
+
+
+
+.form input,
+textarea {
+    border-radius: 0.3em;
+    outline: 1px solid var(--clr-grey-500);
+    border: none;
+    transition: 0.1s outline ease-in, 0.1s pointer ease-in;
+}
+
+
+.container__radio input,
+.container__checkbox input {
+    outline: none;
+}
+
+
+
+.form input:hover,
+.form input:focus,
+.form textarea:hover,
+.form textarea:focus,
+.container__radio:hover,
+.container__radio:focus {
+    outline: 2px solid var(--clr-green-600);
+    cursor: pointer;
+}
+
+.container__radio input:hover,
+.container__radio label:hover,
+.container__radio label:focus,
+.container__checkbox label:hover,
+.container__checkbox input:hover {
+    cursor: pointer;
+    outline: none;
+}
+
+
+
+
+.container__btn {
+    border-radius: 0.5em;
+    margin-top: 0.5em;
+    background-color: var(--clr-green-600);
+    color: var(--clr-white-500);
+    border: 0;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.7em 0;
+    transition: 0.25s cursor, 0.25s background-color;
+}
+
+.container__btn:hover,
+.container__btn:focus {
+    cursor: pointer;
+    background-color: var(--clr-green-900);
+    outline: none;
+    border: none;
+}
+
+
+
+/* ----------- LAYOUT ------------ */
+.wrapper {
+    padding: 1.5em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+.header {
+    font-size: 0.8rem;
+    background-color: var(--clr-grey-900);
+    color: var(--clr-white-500);
+    padding: 1.5em;
+    font-weight: 400;
+    border-radius: 0.7em;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.25s visibility ease-in, 0.25s opacity ease-in;
+    width: 70%
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1em;
+    font-weight: 700;
+
+}
+
+.card {
+    background-color: var(--clr-white-500);
+    max-width: 670px;
+    width: 90%;
+    padding: 1em;
+    border-radius: 0.7em;
+
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.container--name div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+
+.container__radio {
+    border: 1px solid var(--clr-grey-500);
+    padding: 0.85em;
+    gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    margin-top: 0.5em;
+    border-radius: 0.3em;
+    border: none;
+    outline: 1px solid var(--clr-grey-500);
+
+}
+
+
+.container__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5em;
+}
+
+
+
+
+
+
+/* ---------- HIDDEN CLASS ----------- */
+.hidden {
+    display: none;
+    color: var(--clr-red-500);
+
+}
+
+/* ------------- SUBMIT CLASS ------------- */
+.submit {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* -------------- ERROR CLASSES ---------------- */
+.container__error {
+    color: var(--clr-red-500);
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+.form .container .outline__error {
+    outline: 1px solid var(--clr-red-500);
+}

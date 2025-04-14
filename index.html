@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <script src="app.js" defer></script>
+
+    <title>Contact form</title>
+  </head>
+  <body>
+    <!-- -------HIDDEN SUCCESS MESSAGE--------- -->
+
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__container">
+          <img
+            src="assets/images/icon-success-check.svg"
+            alt="success icon"
+            class="header__icon"
+          />
+          <p class="header__title">Message Sent!</p>
+        </div>
+        <p class="header__description">
+          Thanks for completing the form. We'll be in touch soon!
+        </p>
+      </header>
+      <!-- --------CONTACT FORM --------------  -->
+
+      <main class="card">
+        <h1 class="card__title">Contact Us</h1>
+        <form action="/tacos" class="form" novalidate>
+          <!-- ---------- FULL NAME -----------  -->
+          <div class="container container--name">
+            <div>
+              <label for="firstname"
+                >First Name <span class="container__asterisk">*</span>
+              </label>
+              <input type="text" id="firstname" name="firstname" value="" />
+              <p class="container__error container__error--firstname hidden">
+                This field is required
+              </p>
+            </div>
+            <div>
+              <label for="lastname"
+                >Last Name <span class="container__asterisk">*</span></label
+              >
+              <input type="text" id="lastname" name="lastname" value="" />
+              <p class="container__error container__error--lastname hidden">
+                This field is required
+              </p>
+            </div>
+          </div>
+
+          <!-- ---------EMAIL------------ -->
+          <div class="container">
+            <label for="email"
+              >Email Address <span class="container__asterisk">*</span></label
+            >
+            <input type="email" name="email" id="email" value="" />
+            <p class="container__error container__error--email hidden">
+              Please enter a valid email address
+            </p>
+          </div>
+          <!-- --------QUERY TYPE --------------  -->
+          <div class="container">
+            <label for="query">
+              Query Type <span class="container__asterisk">*</span></label
+            >
+            <div class="container__query">
+              <p class="container__radio">
+                <input type="radio" id="general" name="query" />
+                <img
+                  src="assets/images/icon-radio-selected.svg"
+                  alt="query selected icon"
+                  class="hidden query__selected--general"
+                />
+                <label for="general">General Enquiry</label>
+              </p>
+              <p class="container__radio">
+                <input type="radio" id="support" name="query" />
+                <img
+                  src="assets/images/icon-radio-selected.svg"
+                  alt="query selected icon"
+                  class="hidden query__selected--support"
+                />
+                <label for="support">Support Request</label>
+              </p>
+            </div>
+            <p class="container__error container__error--query hidden">
+              Please select a query type
+            </p>
+          </div>
+          <!-- ---------- MESSAGE TEXT AREA ------------  -->
+          <div class="container container-textarea">
+            <label for="message"
+              >Message <span class="container__asterisk">*</span></label
+            >
+            <textarea name="message" id="message" rows="5" value=""></textarea>
+            <p class="container__error container__error--message hidden">
+              This field is required
+            </p>
+          </div>
+
+          <!-- ----------------- CONSENT CHECKBOX ------------------  -->
+          <div class="container">
+            <div class="container__checkbox">
+              <input type="checkbox" id="consent" name="checkbox" value="" />
+              <img
+                src="assets/images/icon-checkbox-check.svg"
+                alt="checkbox icon selected"
+                class="consent__selected hidden"
+              />
+              <label for="consent"
+                >I consent to being contacted by the team
+                <span class="container__asterisk">*</span>
+              </label>
+            </div>
+            <p class="container__error container__error--consent hidden">
+              To submit this form, please consent to being contacted
+            </p>
+          </div>
+
+          <!-- ----------- SUBMIT BUTTON -----------------------------  -->
+          <div class="container">
+            <button class="container__btn" type="submit">Submit</button>
+          </div>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>

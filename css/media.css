@@ -1,0 +1,111 @@
+/* -------- EXTRA SMALL ------------  */
+
+
+@media (max-width:280px) {
+
+    .card {
+        width: 100%;
+        padding: 0.5em;
+    }
+
+    .container {
+        flex-wrap: wrap;
+    }
+}
+
+
+/* --------- LARGE SCREEN ------------------  */
+
+@media (min-width:700px) {
+    .header {
+        padding: 1.5em;
+        font-size: 1rem;
+        width: auto;
+    }
+
+    .form label {
+        font-size: 0.9rem;
+    }
+
+    .card {
+        padding: 2em;
+    }
+
+    .container--name {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .container--name div {
+        flex: 1;
+    }
+
+    .container__query {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .container__query .container__radio {
+        flex: 1;
+    }
+}
+
+
+/* ------------ EXTRA LARGE SCREEN ------------------ */
+
+@media (min-width:950px) {
+
+
+    .card {
+        max-width: 735px;
+        padding: 2.5em;
+        border-radius: 1em;
+    }
+
+    .card__title {
+        font-size: 2rem;
+    }
+
+    .form {
+        gap: 1.75rem;
+    }
+
+    .form input {
+        padding: 0.9em;
+        color: var(--clr-grey-900);
+    }
+
+    .form label {
+        font-size: 1rem;
+    }
+
+    .container__radio {
+        padding-left: 2.1em;
+        gap: 1rem;
+    }
+
+    .container__radio label {
+        font-size: 1.1rem;
+    }
+
+    .container__btn {
+        padding: 1.3em 0;
+        margin-top: 1em;
+    }
+
+
+    .container__checkbox input {
+        transform: scale(1.4);
+
+    }
+
+    .container__radio input {
+        transform: scale(1.4);
+
+    }
+
+}
