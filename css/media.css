@@ -11,6 +11,10 @@
     .container {
         flex-wrap: wrap;
     }
+
+    .container__asterisk {
+        padding-left: 0.5em;
+    }
 }
 
 
