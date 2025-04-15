@@ -39,6 +39,16 @@ supportQuery.addEventListener("change", () => {
   generalQuerySelected.classList.add("hidden");
 });
 
+consentCheck.addEventListener("change", () => {
+  consentCheck.classList.toggle("hidden");
+  consentSelected.classList.toggle("hidden");
+});
+consentSelected.addEventListener("click", () => {
+  consentCheck.checked = false;
+  consentSelected.classList.add("hidden");
+  consentCheck.classList.remove("hidden");
+});
+
 // Form submission handler
 form.addEventListener("submit", (e) => {
   e.preventDefault();

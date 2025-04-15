@@ -237,3 +237,8 @@ textarea {
 .form .container .outline__error {
     outline: 1px solid var(--clr-red-500);
 }
+
+.consent__selected {
+    cursor: pointer;
+    transition: 0.25s cursor ease-in;
+}
