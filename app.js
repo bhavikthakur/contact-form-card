@@ -132,35 +132,44 @@ function isValidEmail(email) {
 
 // Function to show success message and handle timeout
 function showSuccess() {
-  // Show success message
   success.classList.add("submit");
 
-  // Reset form and custom icons
+  // Reset all form fields
   form.reset();
-  resetCustomIcons();
 
-  // Set timeout to hide message after 5 seconds
+  // Wait for DOM to update, then sync visual icons with new state
+  requestAnimationFrame(() => {
+    // Reset custom icon visibility
+    generalQuery.classList.remove("hidden");
+    supportQuery.classList.remove("hidden");
+    consentCheck.classList.remove("hidden");
+
+    generalQuerySelected.classList.add("hidden");
+    supportQuerySelected.classList.add("hidden");
+    consentSelected.classList.add("hidden");
+
+    // Double-check all inputs are also unchecked
+    generalQuery.checked = false;
+    supportQuery.checked = false;
+    consentCheck.checked = false;
+  });
+
+  // Show success message and set up auto-hide
   const timeoutId = setTimeout(() => {
     success.classList.remove("submit");
   }, 5000);
 
   const hideMessageImmediately = () => {
-    success.classList.remove("submit"); // hide immediately
-    clearTimeout(timeoutId); // cancel delayed hiding to avoid flicker
+    success.classList.remove("submit");
+    clearTimeout(timeoutId);
     document.removeEventListener("mousedown", hideMessageImmediately);
     document.removeEventListener("keydown", hideMessageImmediately);
   };
 
   document.addEventListener("mousedown", hideMessageImmediately);
   document.addEventListener("keydown", hideMessageImmediately);
-
-  // Reset custom icons to initial state
-  function resetCustomIcons() {
-    generalQuerySelected.classList.add("hidden");
-    supportQuerySelected.classList.add("hidden");
-    consentSelected.classList.add("hidden");
-  }
 }
+
 // Real-time validation as user types
 firstName.addEventListener("input", () => {
   if (firstNameError.classList.contains("hidden")) return;
