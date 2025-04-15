@@ -60,31 +60,49 @@ form.addEventListener("submit", (e) => {
   // Validate each field
   if (!firstName.value.trim()) {
     showError(firstNameError, firstName);
+    if (isValid) {
+      firstName.focus();
+    }
     isValid = false;
   }
 
   if (!lastName.value.trim()) {
     showError(lastNameError, lastName);
+    if (isValid) {
+      lastName.focus();
+    }
     isValid = false;
   }
 
   if (!isValidEmail(email.value)) {
     showError(emailError, email);
+    if (isValid) {
+      email.focus();
+    }
     isValid = false;
   }
 
   if (!generalQuery.checked && !supportQuery.checked) {
     queryError.classList.remove("hidden");
+    if (isValid) {
+      generalQuery.focus();
+    }
     isValid = false;
   }
 
   if (!messageInput.value.trim()) {
     showError(messgageError, messageInput);
+    if (isValid) {
+      messageInput.focus();
+    }
     isValid = false;
   }
 
   if (!consentCheck.checked) {
     consentError.classList.remove("hidden");
+    if (isValid) {
+      consentCheck.focus();
+    }
     isValid = false;
   }
 
@@ -126,24 +144,23 @@ function showSuccess() {
     success.classList.remove("submit");
   }, 5000);
 
-  // Clear timeout if user interacts with the page
-  const clearOnInteraction = () => {
-    clearTimeout(timeoutId);
-    document.removeEventListener("mousedown", clearOnInteraction);
-    document.removeEventListener("keydown", clearOnInteraction);
+  const hideMessageImmediately = () => {
+    success.classList.remove("submit"); // hide immediately
+    clearTimeout(timeoutId); // cancel delayed hiding to avoid flicker
+    document.removeEventListener("mousedown", hideMessageImmediately);
+    document.removeEventListener("keydown", hideMessageImmediately);
   };
 
-  document.addEventListener("mousedown", clearOnInteraction);
-  document.addEventListener("keydown", clearOnInteraction);
-}
+  document.addEventListener("mousedown", hideMessageImmediately);
+  document.addEventListener("keydown", hideMessageImmediately);
 
-// Reset custom icons to initial state
-function resetCustomIcons() {
-  generalQuerySelected.classList.add("hidden");
-  supportQuerySelected.classList.add("hidden");
-  consentSelected.classList.add("hidden");
+  // Reset custom icons to initial state
+  function resetCustomIcons() {
+    generalQuerySelected.classList.add("hidden");
+    supportQuerySelected.classList.add("hidden");
+    consentSelected.classList.add("hidden");
+  }
 }
-
 // Real-time validation as user types
 firstName.addEventListener("input", () => {
   if (firstNameError.classList.contains("hidden")) return;
